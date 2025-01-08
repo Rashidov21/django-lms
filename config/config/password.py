@@ -1,1 +1,0 @@
-PASSWORD = "Ar95Yandex"
