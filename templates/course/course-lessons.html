@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User | Profile</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome CSS -->
+    <link rel="shortcut icon" href="../images/base/HEAD.svg" type="image/x-icon">
+    <!-- link fontawasome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font-awasome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="../images/base/HEAD.svg" type="image/x-icon">
 </head>
 
 <body>
@@ -95,138 +94,70 @@
     </div>
 
 
+    <!-- end navbar -->
 
 
-
-
-
-
-
-
-    <div class="container my-5">
-        <form action="" method="post" class="edit-card">
-            <div class="row">
-                <!-- Chap qism -->
-                <div class="col-lg-7 mb-4">
-                    <h4 class="mb-3">Shaxsiy ma’lumotlar</h4>
-                    <p class="text-muted">
-                        Shaxsiy ma’lumotlaringizni iloji boricha to‘liq va aniq to‘ldirishga harakat qiling bu sizning
-                        maqolalaringizni o‘quvchilar uchun kerak. Ular ishonchi manbaadan ma’lumot olayotganini his
-                        qilishlari kerak.
-                    </p>
-                    <div class="position-relative d-inline-block">
-                        <input type="file" id="uploadImage" class="d-none" accept="image/*" onchange="previewImage(event)">
-                        <label for="uploadImage" class="position-relative d-block" style="cursor: pointer;">
-                            <img src="../images/primary/second-antony.png" alt="" class="img-fluid" id="imagePreview">
-                            <i class="fa-solid fa-pen-to-square fs-3"
-                               style="position: absolute; top: 75%; left: 80%; transform: translate(-50%, -50%); cursor: pointer;"></i>
-                        </label>
-                    </div>
-                    <div class="row py-3">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Ism-Familya (to’liq holda)</label>
-                                <input type="text" class="form-control" placeholder="Ism" />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Soha, yo’nalish</label>
-                                <input type="text" class="form-control" placeholder="Masalan: Front-End dasturchi" />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Username</label>
-                                <input type="text" class="form-control" placeholder="Username" />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Texnologiyalar</label>
-                                <select class="form-control">
-                                    <option value="">Texnologiyalarni tanlang</option>
-                                    <option value="Python">Python</option>
-                                    <option value="JavaScript">JavaScript</option>
-                                    <option value="UI/UX">UI/UX</option>
-                                    <!-- Boshqa texnologiyalar qo'shilishi mumkin -->
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Email pochta</label>
-                                <input type="email" class="form-control" placeholder="Email" />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Viloyat</label>
-                                <select class="form-control">
-                                    <option value="">Viloyatni tanlang</option>
-                                    <option value="Andijon">Andijon</option>
-                                    <option value="Toshkent">Toshkent</option>
-                                    <!-- Boshqa viloyatlar qo'shilishi mumkin -->
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12">
-                            <div class="mb-3">
-                                <label class="form-label">Qisqacha o’zingiz haqida ma’lumot</label>
-                                <textarea class="form-control" rows="3" placeholder="Ma’lumot"></textarea>
-                            </div>
-                        </div>
-                    </div>
+    <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="courseModalLabel">course</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-x fs-4" aria-hidden="true"></i>
+                    </button>
                 </div>
-
-                <!-- O'ng qism -->
-                <div class="col-lg-5">
-                    <h4 class="mb-3">Sayt yoki ijtimoiy tarmoqlar uchun havolalar</h4>
-                    <div class="p-4">
-                        <div class="mb-3">
-                            <label class="form-label"><i class="fa-brands fa-facebook text-primary"></i>
-                                Facebook</label>
-                            <input type="url" class="form-control" placeholder="URL" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"><i class="fa-brands fa-instagram text-danger"></i>
-                                Instagram</label>
-                            <input type="url" class="form-control" placeholder="URL" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"><i class="fa-brands fa-telegram text-info"></i> Telegram</label>
-                            <input type="url" class="form-control" placeholder="URL" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"><i class="fa-brands fa-linkedin text-primary"></i>
-                                Linkedin</label>
-                            <input type="url" class="form-control" placeholder="URL" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"><i class="fa-brands fa-github text-dark"></i> Github</label>
-                            <input type="url" class="form-control" placeholder="URL" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"><i class="fa-brands fa-behance text-info"></i> Behance</label>
-                            <input type="url" class="form-control" placeholder="URL" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"><i class="fa-brands fa-dribbble text-danger"></i> Dribbble</label>
-                            <input type="url" class="form-control" placeholder="URL" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mb-3">
-                        <button type="submit" class="btn my-btn-success"> <i class="fa-solid fa-user-pen"></i> Save Changes</button>
-                    </div>
+                <div class="modal-body p-5">
+                    <h3 class="course-title">What profession to choose in design</h3>
+                    <p>Lessons</p>
+                    <ol class="list-group list-group-numbered">
+                        <li><a href="">Where am I and where to go?</a></li>
+                        <li><a href="">Where is design used?</a></li>
+                        <li><a href="">Design Myths and Required Skills</a></li>
+                        <li><a href="">Specialist levels</a></li>
+                        <li><a href="">Interface designer</a></li>
+                        <li><a href="">3D designer</a></li>
+                        <li><a href="">Graphic designer</a></li>
+                        <li><a href="">Web designer</a></li>
+                        <li><a href="">Motion designer</a></li>
+                        <li><a href="">Designer in IT</a></li>
+                        <li><a href="">Final lesson</a></li>
+                    </ol>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 
 
 
+    <main>
+
+        <section class="design-profession py-5">
+            <div class="container">
+                <h3 class="design-title">What profession to choose in design
+                    100%
+                    <br>
+                    Course program
+                </h3>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-5">
+                        <div class="course-card lessons w-100" data-toggle="modal" data-target="#courseModal">
+                            <div class="course-img">
+                                <img src="../images/primary/course-img.jpg" class="img-fluid object-fit-contain w-100"
+                                    alt="">
+                            </div>
+                            <h3 class="course-title">What profession to choose in design</h3>
+                            <div class="course-duration pt-4">
+                                <p>Passed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
 
 
 
@@ -235,7 +166,8 @@
 
 
 
-    <!-- start footer -->
+
+
 
     <footer>
         <div class="section-wrapp">
@@ -299,9 +231,16 @@
     </footer>
 
 
+    <!-- endfooter -->
 
 
+
+    <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

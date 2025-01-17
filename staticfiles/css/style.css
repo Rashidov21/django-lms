@@ -17,7 +17,6 @@ html:root {
     --color-black: #000;
     --color-white: #d3efea;
     --color-blue: #3571A3;
-    --color-heart: #000;
     --color-grey: #353535;
     --color-dark-gray: #0B0E0D;
     --dark-mode-text-color:#0f1111;
@@ -54,6 +53,15 @@ body{
 }
 
 
+.course-card{
+    background-color: var(--color-main-white);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: var(--box-shadow)!important;
+}
+
 .profile-card {
     background-color: var(--color-main-white);
     border: 1px solid #ddd;
@@ -62,7 +70,21 @@ body{
     margin-top: 20px;
     box-shadow: var(--box-shadow)!important;
 }
+
+.course-date{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-grey);
+}
     
+.course-title{
+    font-size: var(--size-xl-text);
+    color: var(--color-dark-gray);
+    font-weight: 700;
+}
+.course-desp{
+    font-size: var(--size-sm-text);
+}
 
 .profile-card img {
     width: 100px;
@@ -127,6 +149,129 @@ body{
 }
 
 
+
+.about-title{
+    font-size: var(--size-xl-text);
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+span {
+    color: var(--color-blue)!important;
+    font-size: var(--size-xl-text);
+    font-weight: 700;
+}
+
+.btn-outline-info{
+    color: var(--color-blue)!important;
+    border-color: var(--color-blue)!important;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.btn-outline-info:hover{
+    background-color: var(--color-blue)!important;
+    color: var(--color-main-white)!important;
+}
+
+.course-information , .other-info-card , .faq-card , .overview-card , .program-card{
+    background-color: var(--color-main-white);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+}
+.intro-texts{
+    width: 85%;
+}
+
+.features-card{
+    background-color: #202124;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    color: var(--color-main-white)!important;
+}
+    
+
+.features-text_info{
+    font-size: var(--size-sm-text);
+    color: lightgray;
+}
+
+.lessons:hover{
+    transform: scale(1.09);
+    box-shadow: var(--box-shadow-h)!important ;
+}
+
+.close{
+    background-color: transparent!important;
+    border: none;
+    padding: 10px 20px;
+}
+.fa-x{
+    color: var(--bg-black)!important;
+}
+
+ol li {
+    padding: 10px;
+    list-style-type: decimal!important;
+}
+
+.count{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    padding: 7px 0;
+    background-color: lightgray;
+}
+
+.overview-title{
+    font-size: var(--size-xl-text);
+    color: var(--color-black);
+    font-weight: 700;
+}
+.overview-card , .overview-info{
+    width: 50%;
+}
+
+.overview:nth-child(even){
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+}
+
+
+.overview-text{
+    font-size: var(--size-sm-text);
+    color: var(--color-black);
+    font-weight: 500;
+}
+.information-item{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;  
+    justify-content: center;
+}
+
+.fa-regular{
+    color: var(--color-blue);
+}
+
+.information-icon i {
+    color: var(--color-blue)!important;
+    font-size: var(--size-xl-text)!important;
+}
+
+.user-avatar{
+    width: 100%;
+    height: fit-content;
+}
+
+
+
 .tag {
     background-color: #e9ecef;
     border-radius: 16px;
@@ -185,6 +330,43 @@ a{
 }
 
 
+.course-price p{
+    line-height: 8px;
+}
+
+.price{
+    font-size: var(--size-sm-text);
+}
+
+.sale-price{
+    font-size: 13px;
+    color: var(--color-grey);
+}
+
+.course-category{
+    background-color: transparent;
+    border: solid 1px black;
+    border-radius: 30px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 0;
+}
+
+.course-category p{
+    margin-bottom: 0;
+}
+
+.hero-card{
+    background-color: var(--color-main-white);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -198,6 +380,8 @@ a{
 .offcanvas-header {
     border-bottom: 1px solid #ddd;
 }
+
+
 
 .offcanvas-body {
     padding: 1rem;
@@ -341,14 +525,12 @@ html.dark .footer-link_item.social_link a {
     margin: 0 auto 20px auto;
 }
 
-.btn-primary {
+.btn-primary, .btn-primary i {
     background-color: var(--color-blue)!important;
     border: none;
+    color: var(--color-main-white)!important;
 }
 
-.btn-primary:hover {
-    background-color: var(--color-blue)!important;
-}
 
 .text-link {
     color: var(--color-green)!important;

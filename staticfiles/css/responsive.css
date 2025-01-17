@@ -71,12 +71,101 @@ html:root {
     }
 }
 
-@media only screen and (min-width:280px) and (max-width:480px){
+@media only screen and (min-width:280px) and (max-width:767px){
     .articale-title{
         font-size:var(--size-sm-text);
         font-weight: 700;
     }
     .articale-desp{
         font-size:12px;
+    }
+    .hero-title{
+        font-size:var(--size-m-text);
+    }
+    .hero-text{
+        font-size:var(--size-sm-text);
+    }
+    .course-category p{
+        padding: 5px 10px;
+        font-size: var(--size-sm-text);
+    }
+    .articale-div{
+        width: 100%!important;
+    }
+    .overview-title{
+        font-size: var(--size-m-text);
+    }
+    .overview-text{
+        font-size: 12px;
+    }
+    .overview-card , .overview-info{
+        width: 100%!important;
+    }
+    .overview{
+        background-color: var(--color-main-white);
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: var(--box-shadow);
+        margin-top: 20px;
+    }
+    .overview-card{
+        border: none;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+    .articale-title{
+        font-size:var(--size-m-text);
+        font-weight:  700;
+    }
+    .articale-desp{
+        font-size:14px;
+    }
+    .hero-title{
+        font-size:var(--size-m-text);
+    }
+    .hero-text{
+        font-size:var(--size-sm-text);
+    }
+    .course-category p{
+        padding: 5px 10px;
+        font-size: var(--size-sm-text);
+    }
+    .information-text{
+        font-size:12px;
+        font-weight: 600;
+    }
+    .user-avatar{
+        width: 25%!important;
+        height: fit-content;
+    }
+    .articale-title{
+        font-size: var(--size-sm-text);
+        font-weight: 600;
+    }
+    .articale-desp{
+        font-size: 10px;
+    }
+    .other-info-text{
+        font-size: var(--size-sm-text)
+    }
+    .overview-title{
+        font-size: var(--size-m-text);
+    }
+    .overview-text{
+        font-size: 12px;
+    }
+} 
+
+@media only screen and (min-width:992px) {
+    .user-avatar{
+        width: 25%!important;
+    }
+    .articale-div{
+        width: 50%;
+    }
+    .articale-img{
+        width: 25%!important;
     }
 }
