@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+			<div class="main-panel">
+                
+				<div class="content">
+                    
+					<div class="container-fluid">
+                    
+                        
+                        <div class="row">
+
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                    <h5 class="card-title">{{object.name}}</h5>
+                                    </div>
+                                    <div class="card-body">
+                                    <p class="card-text">
+                                    <b>O'qituvchi: </b> {{object.teacher.get_full_name}} <br>
+                                    <b>Narx:</b> {{object.course.price}} <br>
+                                    <b>Vaqti:</b> {{object.lesson_start_time}}-{{object.lesson_end_time}} <br>
+                                    <b>Boshlangan sanasi:</b> {{object.created_at}} <br>
+                                    
+                                    </p>
+              
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-header">
+                                    <h5 class="card-title">O'quvchilar</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Ismi</th>
+                                                        <th>O'chirish</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            Steven Davies
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-danger">
+                                                                <i class="la la-times-circle"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-12 col-md-8 col-lg-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                    <h5 class="card-title">Davomat</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Ismi</th>
+                                                        <th>1 jan</th>
+                                                        <th>3 Jan</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                        </td>
+                                                        <td>kemadi</td>
+                                                        <td>Keldi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                        </td>
+                                                        <td>kemadi</td>
+                                                        <td>Keldi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                        </td>
+                                                        <td>kemadi</td>
+                                                        <td>Keldi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                        </td>
+                                                        <td>kemadi</td>
+                                                        <td>Keldi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                        </td>
+                                                        <td>kemadi</td>
+                                                        <td>Keldi</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+					</div>
+				</div>
+
+
+
+
+
+				<footer class="footer">
+					<div class="container-fluid">
+
+						<div class="copyright ml-auto text-bold">
+						GEEKS	2025
+						</div>				
+					</div>
+				</footer>
+			</div>
+	
+{% endblock content %}

@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+			<div class="main-panel">
+
+
+				<div class="content">
+                    
+					<div class="container-fluid">
+                    
+                        <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-primary">
+                                        <h6 class="modal-title">Lid qo'shish</h6>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">									
+                                        <form action="" method="post">
+                                            {% csrf_token %}
+											<div class="form-group">
+												<label for="squareInput">Ismi</label>
+												<input type="text" name="first_name" class="form-control input-square" id="squareInput" placeholder="Ism" required>
+											</div>
+											<div class="form-group">
+												<label for="squareInput">Familya</label>
+												<input type="text" name="last_name" class="form-control input-square" id="squareInput" placeholder="Familya" required>
+											</div>
+											<div class="form-group">
+												<label for="pillInput">Telefon</label>
+												<input type="text" name="phone" class="form-control input-square" id="pillInput" placeholder="Telefon raqami" required>
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-primary">Qo'shish</button>
+											</div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="card-title">Faol lidlar</div>
+                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalUpdate">
+                                    <i class="la la-user-plus"></i> Lid qo'shish
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Ismi</th>
+                                                <th>Familya</th>
+                                                <th>Telefon</th>
+                                                <th>Ro'yhatdan o'tgan sana</th>
+                                                <th>Harakatlar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for lead in object_list %}
+                                            <tr>
+                                                <th scope="row" style="width: 10px;">{{forloop.counter}}</th>
+                                                <td>
+                                                    <a href="#" class="text-primary" style="text-decoration: none;">{{lead.first_name}}</a>
+                                                </td>
+                                                <td><a href="#" class="text-primary" style="text-decoration: none;">{{lead.last_name}}</a></td>
+                                                <td>{{lead.phone}}</td>
+                                                <td>{{lead.created_at|date:"Y-m-d H:i"}} da</td>
+                                                <td>
+                                                    <a href="" class="btn btn-primary" title="Guruhga qo'shish">
+                                                        <i class="la la-plus"></i>
+                                                    </a>
+                                                    <a href="{% url 'main:lead_delete' lead.id  %}" class="btn btn-primary" title="O'chirish">
+                                                        <i class="la la-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <nav aria-label="...">
+                                    <ul class="pagination">
+                                        {% if page_obj.has_previous %}
+                                      <li class="page-item">
+                                        <a href="?page={{ page_obj.previous_page_number }}" class="page-link">Oldingi</a>
+                                      </li>
+                                      {% endif %}
+                                      {% for page in page_obj.paginator.page_range %}
+                                      {% if page == page_obj.number %}
+                                        <li class="page-item active">
+                                            <a class="page-link " href="?page{{page}}">{{page}}</a>
+                                        </li>
+                                        {% else %}
+                                        <li class="page-item">
+                                            <a class="page-link " href="?page{{page}}">{{page}}</a>
+                                        </li>
+                                        {% endif %} 
+                                      {% endfor %}
+                                      {% if page_obj.has_next %}
+                                      <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Keyingi</a>
+                                      </li>
+                                      {% endif %}
+                                    </ul>
+                                  </nav>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
+
+
+
+
+				<footer class="footer">
+					<div class="container-fluid">
+
+						<div class="copyright ml-auto text-bold">
+						GEEKS	2025
+						</div>				
+					</div>
+				</footer>
+			</div>
+			{% endblock %}

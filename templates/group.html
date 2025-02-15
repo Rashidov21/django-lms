@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+			<div class="main-panel">
+                
+				<div class="content">
+                    
+					<div class="container-fluid">
+                    
+
+
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="card-title">Guruhlar ro'yhati</div>
+                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalUpdate">
+                                    <i class="la la-user-plus"></i> Guruh qo'shish
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nomi</th>
+                                                <th>Kurs</th>
+                                                <th>O'qituvchi</th>
+                                                <th>Dars vaqt</th>
+                                                <th>Harakatlar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for group in groups %}
+                                            <tr>
+                                                <th scope="row" style="width: 10px;">
+                                                    {{forloop.counter}}
+                                                </th>
+                                                <td>
+                                                    <a href="{% url 'main:group_detail' group.id %}" class="text-primary" style="text-decoration: none;">{{group.name}}</a>
+                                                </td>
+                                                <td>
+                                                    {{group.course.title}}
+                                                </td>
+                                                <td>
+                                                    {{group.teacher.get_full_name}}
+                                                </td>
+                                                <td>
+                                                <b>{{group.lesson_days|title}} kunlari</b> ,
+                                                <b>{{group.lesson_start_time}} - {{group.lesson_end_time}}</b>
+                                                </td>
+                                                <td>
+                                                    <a href="{% url 'main:group_update' group.id %}" class="btn btn-primary" title="Tahrirlash">
+                                                        <i class="la la-edit"></i>
+                                                    </a>
+                                                    <a href="{% url 'main:group_delete' group.id %}" class="btn btn-primary" title="O'chirish">
+                                                        <i class="la la-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="card-title">Kurslar ro'yhati</div>
+                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalUpdateCourse">
+                                    <i class="la la-user-plus"></i> Kurs qo'shish
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Kurs nomi</th>
+                                                <th>Narxi</th>
+                                                <th>Davomiyligi</th>
+                                                <th>Harakatlar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for course in courses %}
+                                            <tr>
+                                                <th scope="row" style="width: 10px;">{{forloop.counter}}</th>
+                                                <td>
+                                                    <a href="" class="text-primary" style="text-decoration: none;">
+                                                        {{course.title}}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    {{course.price}}
+                                                </td>
+                                                <td>
+                                                    {{course.duration}} oy
+                                                </td>
+                                                <td>
+                                                    <a href="{% url 'main:course_update' course.id %}" class="btn btn-primary" title="Tahrirlash">
+                                                        <i class="la la-edit"></i>
+                                                    </a>
+                                                    <a href="{% url 'main:course_delete' course.id %}" class="btn btn-primary" title="O'chirish">
+                                                        <i class="la la-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+                	<!-- Modal -->
+    <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h6 class="modal-title">Guruh qo'shish</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">									
+                    <form action="{% url 'main:group_add' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="squareInput">Nomi</label>
+                            <input type="text" name="name" class="form-control input-square" id="squareInput" placeholder="Nomi">
+                        </div>
+                        <div class="form-group">
+                            <label for="squareSelect">Hafta kunini tanlang</label>
+                            <select class="form-control input-square" name="lesson_days" id="squareSelect">
+                                <option value="toq">D-CH-J</option>
+                                <option value="juft">S-P-Sh</option>
+                                <option value="harkuni">Har kuni (D-Sh)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="squareSelect">Kursni tanlang</label>
+                            <select class="form-control input-square" name="course" id="squareSelect">
+                                {% for c in courses %}
+                                <option value="{{c.id}}">{{c.title}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="squareSelect">O'qituvchini tanlang</label>
+                            <select class="form-control input-square" name="teacher" id="squareSelect">
+                                {% for teacher in teachers %}
+                                <option value="{{teacher.id}}">{{teacher.get_full_name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pillInput">Dars boshlanish vaqti</label>
+                            <input type="time" name="lesson_start_time" class="form-control input-square" id="pillInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="pillInput">Dars tugash vaqti</label>
+                            <input type="time" name="lesson_end_time" class="form-control input-square" id="pillInput">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Yuborish</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+                <div class="modal fade" id="modalUpdateCourse" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary">
+                                <h6 class="modal-title">Kurs qo'shish</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">									
+                                <form action="{% url 'main:course_add' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="squareInput">Kurs nomi</label>
+                                        <input type="text" name="title" class="form-control input-square" id="squareInput" placeholder="Kurs nomi" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="squareInput">Kurs narxi</label>
+                                        <input type="text" name="price" class="form-control input-square" id="squareInput" placeholder="Narxi" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pillInput">Davomiyligi</label>
+                                        <input type="text" name="duration" class="form-control input-square" id="pillInput" placeholder="Necha oy davom etishi" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Qo'shish</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+				<footer class="footer">
+					<div class="container-fluid">
+
+						<div class="copyright ml-auto text-bold">
+						GEEKS	2025
+						</div>				
+					</div>
+				</footer>
+			</div>
+{% endblock %}

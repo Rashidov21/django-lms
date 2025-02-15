@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>EDUCRM - GEEKS ANDIJAN</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="{% static 'assets/css/ready.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/demo.css' %}">
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="main-header">
+			<div class="logo-header">
+				<a href="/" class="logo">
+					EDUCRM
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					
+					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
+						<div class="input-group">
+							<input type="text" placeholder="Search ..." class="form-control">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="la la-search search-icon"></i>
+								</span>
+							</div>
+						</div>
+					</form>
+
+					{% if messages %}
+					{% for message in messages %}
+					<p class="text-dark text-center" id="message_box" >{{message}}</p>
+					{% endfor %}
+					{% endif %}
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="{% static 'assets/img/profile.jpg' %}" alt="user-img" width="36" class="img-circle"><span >Administrator</span></span> </a>
+							<ul class="dropdown-menu dropdown-user">
+
+									<a class="dropdown-item" href="profile.html"><i class="ti-user"></i> My Profile</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="logout.html"><i class="fa fa-power-off"></i> Logout</a>
+								</ul>
+								<!-- /.dropdown-user -->
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<div class="user">
+						<div class="photo">
+							<img src="{% static 'assets/img/profile.jpg' %}">
+						</div>
+						<div class="info">
+							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									Steven
+									<span class="user-level">Administrator</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample" aria-expanded="true">
+								<ul class="nav">
+									<li>
+										<a href="profile.html">
+											<span class="link-collapse">My Profile</span>
+										</a>
+									</li>
+									<li>
+										<a href="settings.html">
+											<span class="link-collapse">Settings</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav">
+						<li class="nav-item">
+							<a href="/">
+								<i class="la la-dashboard"></i>
+								<p>Dashboard</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="students.html">
+								<i class="la la-mortar-board"></i>
+								<p>Talabalar</p>
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a href="{% url 'main:leads' %}">
+								<i class="la la-users"></i>
+								<p>Lidlar</p>
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a href="{% url 'main:groups' %}">
+								<i class="la la-user"></i>
+								<p>Guruhlar</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="task.html">
+								<i class="la la-check-circle"></i>
+								<p>Topshiriqlar</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="mentor.html">
+								<i class="la la-user"></i>
+								<p>O'qituvchilar</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="debt.html">
+								<i class="la la-money"></i>
+								<p>Qarzdorlar</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="settings.html">
+								<i class="la la-cog"></i>
+								<p>Sozlamalar</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+	</div>
+	
+
+
+</body>
+<script src="{% static 'assets/js/core/jquery.3.2.1.min.js' %}"></script>
+<script src="{% static 'assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js' %}"></script>
+<script src="{% static 'assets/js/core/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js' %}"></script>
+<script src="{% static 'assets/js/plugin/jquery-mapael/jquery.mapael.min.js' %}"></script>
+<script src="{% static 'assets/js/plugin/jquery-mapael/maps/world_countries.min.js' %}"></script>
+<script src="{% static 'assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
+<script src="{% static 'assets/js/ready.min.js' %}"></script>
+<script>
+	setInterval(function() {
+		const msg = document.querySelector("#message_box")
+		msg.innerHTML = ""
+		
+	},3000)
+</script>
+
+
+</html>

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="main-panel">
+	
+	<div class="content">
+		
+		<div class="container-fluid">
+		
+
+
+			<div class="card">
+				<div class="card-header">
+					<div class="card-title">O'qituvchilar ro'yhati</div>
+					<a href="" class="btn btn-primary float-right">
+						<i class="la la-user-plus"></i> O'qituvchi qo'shish
+					</a>
+				</div>
+				<div class="card-body">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Ismi</th>
+									<th>Nomeri</th>
+									<th>Kelishuv</th>
+									<th>Harakat</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for teacher in object_list %}
+								<tr>
+									<th scope="row" style="width: 10px;">{{forloop.counter}}</th>
+									<td>
+										<a href="#" class="text-primary" style="text-decoration: none;">{{teacher.get_full_name}}</a>
+									</td>
+									<td>
+										{{teacher.phone}}
+									</td>
+									<td>
+										{% if teacher.contract_type == 'percent' %}
+											Foiz
+										{% else %}
+											O'quvchi sonidan to'lov.
+										{% endif %}	
+									</td>
+									<td>
+										<a href="{% url 'main:teacher_update' teacher.id %}" class="btn btn-primary" title="Tahrirlash">
+											<i class="la la-edit"></i>
+										</a>
+										<a href="{% url 'main:teacher_delete' teacher.id %}" class="btn btn-primary" title="O'chirish">
+											<i class="la la-trash"></i>
+										</a>
+									</td>
+								</tr>
+								{% endfor%}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<footer class="footer">
+		<div class="container-fluid">
+
+			<div class="copyright ml-auto text-bold">
+			GEEKS	2025
+			</div>				
+		</div>
+	</footer>
+</div>
+{% endblock content %}

@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+			<div class="main-panel">
+                
+				<div class="content">
+                    
+					<div class="container-fluid">
+                    
+                        <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-primary">
+                                        <h6 class="modal-title">Talaba qo'shish</h6>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">									
+                                        <form action="" method="post">
+											<div class="form-group">
+												<label for="squareInput">Ismi</label>
+												<input type="text" class="form-control input-square" id="squareInput" placeholder="Ism">
+											</div>
+											<div class="form-group">
+												<label for="squareSelect">Guruhni tanlang</label>
+												<select class="form-control input-square" id="squareSelect">
+													<option>Full-stack</option>
+													<option>SMM</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="pillInput">Nomer</label>
+												<input type="text" class="form-control input-square" id="pillInput" placeholder="Nomer">
+											</div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Talabalar ro'yhati</div>
+                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalUpdate">
+                                    <i class="la la-user-plus"></i> Talaba qo'shish
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Ismi</th>
+                                                <th>Guruh</th>
+                                                <th>Nomer</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" style="width: 10px;">1</th>
+                                                <td>
+                                                    <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                </td>
+                                                <td>Full-Stack</td>
+                                                <td>+998991234567</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" style="width: 10px;">2</th>
+                                                <td>
+                                                    <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                </td>
+                                                <td>Full-Stack</td>
+                                                <td>+998991234567</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" style="width: 10px;">3</th>
+                                                <td>
+                                                    <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                </td>
+                                                <td>SMM</td>
+                                                <td>+998991234567</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" style="width: 10px;">4</th>
+                                                <td>
+                                                    <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                </td>
+                                                <td>Full-Stack</td>
+                                                <td>+998991234567</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" style="width: 10px;">5</th>
+                                                <td>
+                                                    <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                </td>
+                                                <td>Mobilografiya</td>
+                                                <td>+998991234567</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
+
+
+
+
+				<footer class="footer">
+					<div class="container-fluid">
+
+						<div class="copyright ml-auto text-bold">
+						GEEKS	2025
+						</div>				
+					</div>
+				</footer>
+			</div>
+			{% endblock %}

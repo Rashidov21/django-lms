@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-flsrp_2&u&c4x2-a#1m#zu!w08-9^)4%!q*bp!q$$(667$+0(f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users'
+    'main',
+    'users',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -105,6 +107,17 @@ LOGIN_URL = "/users/login/"
 LOGOUT_URL = "/users/logout/"
 LOGIN_REDIRECT_URL = "/"
 
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.yandex.ru'
+# EMAIL_PORT = 465
+# EMAIL_USE_SSL = True
+# EMAIL_HOST_USER = "abdurakhmonrashidov@yandex.ru"
+# EMAIL_HOST_PASSWORD = 'fzcpbyqdtgngblky'
+
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# SERVER_EMAIL = EMAIL_HOST_USER
+# EMAIL_ADMIN = EMAIL_HOST_USER
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

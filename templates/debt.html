@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>EDUCRM - GEEKS ANDIJAN</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="assets/css/ready.css">
+	<link rel="stylesheet" href="assets/css/demo.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<div class="logo-header">
+				<a href="/" class="logo">
+					EDUCRM
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					
+					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
+						<div class="input-group">
+							<input type="text" placeholder="Search ..." class="form-control">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="la la-search search-icon"></i>
+								</span>
+							</div>
+						</div>
+					</form>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span >Administrator</span></span> </a>
+							<ul class="dropdown-menu dropdown-user">
+
+									<a class="dropdown-item" href="profile.html"><i class="ti-user"></i> My Profile</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="logout.html"><i class="fa fa-power-off"></i> Logout</a>
+								</ul>
+								<!-- /.dropdown-user -->
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<div class="user">
+						<div class="photo">
+							<img src="assets/img/profile.jpg">
+						</div>
+						<div class="info">
+							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									Steven
+									<span class="user-level">Administrator</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample" aria-expanded="true">
+								<ul class="nav">
+									<li>
+										<a href="profile.html">
+											<span class="link-collapse">My Profile</span>
+										</a>
+									</li>
+									<li>
+										<a href="settings.html">
+											<span class="link-collapse">Settings</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav">
+						<li class="nav-item">
+							<a href="index.html">
+								<i class="la la-dashboard"></i>
+								<p>Dashboard</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="students.html">
+								<i class="la la-mortar-board"></i>
+								<p>Talabalar</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="group.html">
+								<i class="la la-users"></i>
+								<p>Guruhlar</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="task.html">
+								<i class="la la-check-circle"></i>
+								<p>Topshiriqlar</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="mentor.html">
+								<i class="la la-user"></i>
+								<p>O'qituvchilar</p>
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a href="debt.html">
+								<i class="la la-money"></i>
+								<p>Qarzdorlar</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="settings.html">
+								<i class="la la-cog"></i>
+								<p>Sozlamalar</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-panel">
+                
+				<div class="content">
+                    
+					<div class="container-fluid">
+                    
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Talabalar ro'yhati</div>
+                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalUpdate">
+                                    <i class="la la-user-plus"></i> Talaba qo'shish
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Ismi</th>
+                                                <th>Guruh</th>
+                                                <th>Nomer</th>
+                                                <th>Tolash</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" style="width: 10px;">1</th>
+                                                <td>
+                                                    <a href="#" class="text-primary" style="text-decoration: none;">Steven Davies</a>
+                                                </td>
+                                                <td>Full-Stack</td>
+                                                <td>+998991234567</td>
+                                                <td>
+													<button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalUpdate1">
+														 To'lov
+													</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
+
+
+
+
+				<footer class="footer">
+					<div class="container-fluid">
+
+						<div class="copyright ml-auto text-bold">
+						GEEKS	2025
+						</div>				
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-primary">
+					<h6 class="modal-title">Talaba qo'shish</h6>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">									
+					<form action="" method="post">
+						<div class="form-group">
+							<label for="squareInput">Ismi</label>
+							<input type="text" class="form-control input-square" id="squareInput" placeholder="Ism">
+						</div>
+						<div class="form-group">
+							<label for="squareSelect">Guruhni tanlang</label>
+							<select class="form-control input-square" id="squareSelect">
+								<option>Full-stack</option>
+								<option>SMM</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="pillInput">Nomer</label>
+							<input type="text" class="form-control input-square" id="pillInput" placeholder="Nomer">
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modalUpdate1" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-primary">
+					<h6 class="modal-title">To'lov qilish</h6>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">									
+					<form action="" method="post">
+						<div class="form-group">
+							<label for="squareInput">Summa:</label>
+							<input type="text" class="form-control input-square" id="squareInput" placeholder="Ism">
+						</div>
+						<button class="btn btn-primary">
+							To'lov qilish
+						</button>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+</body>
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/js/ready.min.js"></script>
+
+
+</html>
